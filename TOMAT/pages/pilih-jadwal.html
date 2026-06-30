@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Pilih Jadwal | BIOSWES</title>
+
+<link rel="stylesheet" href="../css/style.css">
+
+<style>
+
+.container{
+
+max-width:900px;
+margin:50px auto;
+padding:30px;
+background:#1b1b1b;
+border-radius:15px;
+
+}
+
+.container h2{
+
+text-align:center;
+margin-bottom:30px;
+color:#FFD700;
+
+}
+
+.info-film{
+
+display:flex;
+align-items:center;
+gap:25px;
+margin-bottom:35px;
+
+}
+
+.info-film img{
+
+width:180px;
+border-radius:10px;
+
+}
+
+.info-film h3{
+
+font-size:30px;
+margin-bottom:10px;
+
+}
+
+label{
+
+display:block;
+margin-top:20px;
+margin-bottom:8px;
+font-weight:bold;
+
+}
+
+select{
+
+width:100%;
+padding:15px;
+border:none;
+border-radius:8px;
+font-size:16px;
+margin-bottom:10px;
+
+}
+
+button{
+
+margin-top:25px;
+width:100%;
+padding:16px;
+background:#FFD700;
+border:none;
+border-radius:8px;
+font-size:18px;
+font-weight:bold;
+cursor:pointer;
+
+}
+
+button:hover{
+
+background:white;
+
+}
+
+@media(max-width:768px){
+
+.info-film{
+
+flex-direction:column;
+text-align:center;
+
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">🎬 BIOSWES</div>
+
+<nav>
+
+<a href="../index.html">Home</a>
+
+</nav>
+
+</header>
+
+<div class="container">
+
+<h2>Pilih Jadwal Tayang</h2>
+
+<div class="info-film">
+
+<img id="poster">
+
+<div>
+
+<h3 id="judul"></h3>
+
+<p id="genre"></p>
+
+<p id="durasi"></p>
+
+</div>
+
+</div>
+
+<label>Tanggal</label>
+
+<select id="tanggal">
+
+<option>30 Juni 2026</option>
+<option>1 Juli 2026</option>
+<option>2 Juli 2026</option>
+
+</select>
+
+<label>Studio</label>
+
+<select id="studio">
+
+<option>Studio 1</option>
+<option>Studio 2</option>
+<option>Studio IMAX</option>
+<option>Studio Premiere</option>
+
+</select>
+
+<label>Jam Tayang</label>
+
+<select id="jam">
+
+<option>10:00 WIB</option>
+<option>13:00 WIB</option>
+<option>16:00 WIB</option>
+<option>19:00 WIB</option>
+<option>21:30 WIB</option>
+
+</select>
+
+<button onclick="lanjut()">
+
+Lanjut Pilih Kursi →
+
+</button>
+
+</div>
+
+<script>
+
+const film=JSON.parse(localStorage.getItem("film"));
+
+if(film){
+
+poster.src="../"+film.gambar;
+
+judul.innerHTML=film.judul;
+
+genre.innerHTML="Genre : "+film.genre;
+
+durasi.innerHTML="Durasi : "+film.durasi;
+
+}
+
+function lanjut(){
+
+const jadwal={
+
+tanggal:document.getElementById("tanggal").value,
+
+studio:document.getElementById("studio").value,
+
+jam:document.getElementById("jam").value
+
+};
+
+localStorage.setItem("jadwal",JSON.stringify(jadwal));
+
+window.location="pilih-kursi.html";
+
+}
+
+</script>
+
+</body>
+</html>

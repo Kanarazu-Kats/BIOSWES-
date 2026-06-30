@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Detail Film | BIOSWES</title>
+
+<link rel="stylesheet" href="../css/style.css">
+
+<style>
+
+.detail{
+
+max-width:1100px;
+margin:50px auto;
+padding:20px;
+display:flex;
+gap:40px;
+align-items:flex-start;
+
+}
+
+.detail img{
+
+width:320px;
+height:470px;
+object-fit:cover;
+border-radius:15px;
+box-shadow:0 10px 30px rgba(0,0,0,.5);
+
+}
+
+.info{
+
+flex:1;
+
+}
+
+.info h1{
+
+font-size:40px;
+margin-bottom:20px;
+color:#FFD700;
+
+}
+
+.info p{
+
+margin:15px 0;
+font-size:18px;
+line-height:1.8;
+
+}
+
+.sinopsis{
+
+margin-top:20px;
+padding:20px;
+background:#1d1d1d;
+border-radius:10px;
+line-height:1.8;
+
+}
+
+.btn{
+
+margin-top:30px;
+display:flex;
+gap:15px;
+
+}
+
+.btn a{
+
+text-decoration:none;
+
+}
+
+.btn button{
+
+padding:15px 35px;
+border:none;
+border-radius:8px;
+font-size:17px;
+font-weight:bold;
+cursor:pointer;
+transition:.3s;
+
+}
+
+.pesan{
+
+background:#FFD700;
+color:black;
+
+}
+
+.kembali{
+
+background:#333;
+color:white;
+
+}
+
+.btn button:hover{
+
+transform:scale(1.05);
+
+}
+
+@media(max-width:768px){
+
+.detail{
+
+flex-direction:column;
+text-align:center;
+
+}
+
+.detail img{
+
+width:260px;
+height:380px;
+
+}
+
+.btn{
+
+justify-content:center;
+
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">
+
+🎬 BIOSWES
+
+</div>
+
+<nav>
+
+<a href="../index.html">Home</a>
+
+</nav>
+
+</header>
+
+<section class="detail">
+
+<img id="poster" src="">
+
+<div class="info">
+
+<h1 id="judul"></h1>
+
+<p id="genre"></p>
+
+<p id="durasi"></p>
+
+<p id="rating"></p>
+
+<div class="sinopsis">
+
+<h3>Sinopsis</h3>
+
+<p id="sinopsis"></p>
+
+</div>
+
+<div class="btn">
+
+<a href="pilih-jadwal.html">
+
+<button class="pesan">
+
+🎟 Pesan Tiket
+
+</button>
+
+</a>
+
+<a href="../index.html">
+
+<button class="kembali">
+
+⬅ Kembali
+
+</button>
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<script src="../js/script.js"></script>
+
+</body>
+</html>

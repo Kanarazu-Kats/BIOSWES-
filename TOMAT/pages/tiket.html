@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>E-Tiket BIOSWES</title>
+
+<link rel="stylesheet" href="../css/style.css">
+
+<style>
+
+.ticket{
+
+max-width:700px;
+margin:50px auto;
+background:white;
+color:black;
+border-radius:20px;
+overflow:hidden;
+box-shadow:0 10px 40px rgba(0,0,0,.4);
+
+}
+
+.top{
+
+background:#FFD700;
+padding:25px;
+text-align:center;
+
+}
+
+.top h1{
+
+font-size:32px;
+
+}
+
+.body{
+
+padding:30px;
+
+}
+
+.item{
+
+display:flex;
+justify-content:space-between;
+padding:15px 0;
+border-bottom:1px dashed #999;
+
+}
+
+.item b{
+
+color:#444;
+
+}
+
+.qr{
+
+text-align:center;
+margin:35px 0;
+
+}
+
+.qr img{
+
+width:180px;
+
+}
+
+.footer{
+
+padding:20px;
+text-align:center;
+background:#f2f2f2;
+
+}
+
+button{
+
+padding:15px 35px;
+border:none;
+background:#FFD700;
+font-size:18px;
+font-weight:bold;
+border-radius:8px;
+cursor:pointer;
+
+}
+
+button:hover{
+
+background:black;
+color:white;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="ticket">
+
+<div class="top">
+
+<h1>🎬 BIOSWES</h1>
+
+<p>E-Ticket Bioskop</p>
+
+</div>
+
+<div class="body">
+
+<div class="item">
+
+<b>Film</b>
+
+<span id="film"></span>
+
+</div>
+
+<div class="item">
+
+<b>Tanggal</b>
+
+<span id="tanggal"></span>
+
+</div>
+
+<div class="item">
+
+<b>Jam</b>
+
+<span id="jam"></span>
+
+</div>
+
+<div class="item">
+
+<b>Studio</b>
+
+<span id="studio"></span>
+
+</div>
+
+<div class="item">
+
+<b>Kursi</b>
+
+<span id="kursi"></span>
+
+</div>
+
+<div class="item">
+
+<b>Pembayaran</b>
+
+<span id="metode"></span>
+
+</div>
+
+<div class="item">
+
+<b>Total</b>
+
+<span id="total"></span>
+
+</div>
+
+<div class="qr">
+
+<img
+src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=BIOSWES-TIKET"
+alt="QR">
+
+</div>
+
+</div>
+
+<div class="footer">
+
+<button onclick="window.print()">
+🖨 Cetak Tiket
+</button>
+
+<br><br>
+
+<a href="../index.html">
+    <button class="home-btn">
+        🏠 Kembali ke Beranda
+    </button>
+</a>
+
+</div>
+
+</div>
+
+<script>
+
+const film=JSON.parse(localStorage.getItem("film"));
+
+const jadwal=JSON.parse(localStorage.getItem("jadwal"));
+
+const kursi=JSON.parse(localStorage.getItem("kursi"));
+
+const metode=localStorage.getItem("metode");
+
+const total=localStorage.getItem("total");
+
+film&&(document.getElementById("film").innerHTML=film.judul);
+
+jadwal&&(document.getElementById("tanggal").innerHTML=jadwal.tanggal);
+
+jadwal&&(document.getElementById("jam").innerHTML=jadwal.jam);
+
+jadwal&&(document.getElementById("studio").innerHTML=jadwal.studio);
+
+kursi&&(document.getElementById("kursi").innerHTML=kursi.join(", "));
+
+document.getElementById("metode").innerHTML=metode;
+
+document.getElementById("total").innerHTML="Rp "+Number(total).toLocaleString("id-ID");
+
+</script>
+
+</body>
+</html>

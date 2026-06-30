@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>BIOSWES - Pesan Tiket Online</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<header>
+
+<div class="logo">
+🎬 BIOSWES
+</div>
+
+<nav>
+
+<a href="#">Home</a>
+<a href="#movie">Film</a>
+<a href="#coming">Coming Soon</a>
+<a href="#promo">Promo</a>
+
+</nav>
+
+</header>
+
+<!-- ================= HERO ================= -->
+
+<section class="hero">
+
+<div class="overlay">
+
+<h1>Pesan Tiket Bioskop Online</h1>
+
+<p>Nonton jadi lebih mudah, cepat dan praktis.</p>
+
+<a href="#movie">
+<button>Lihat Film</button>
+</a>
+
+</div>
+
+</section>
+
+<!-- ================= SEARCH ================= -->
+
+<section class="search">
+
+<input
+type="text"
+id="search"
+placeholder="Cari Film..."
+>
+
+</section>
+
+<!-- ================= FILM ================= -->
+
+<section class="movies" id="movie">
+
+<h2>Now Playing</h2>
+
+<div class="movie-container">
+
+<!-- Film 1 -->
+
+<div class="movie-card">
+
+<img src="images/avatar.jpg">
+
+<h3>Avatar 3</h3>
+
+<p>Adventure • 2025</p>
+
+<div class="rating">
+⭐⭐⭐⭐☆
+</div>
+
+<a href="pages/detail-film.html"
+onclick="pilihFilm(
+'Avatar 3',
+'images/avatar.jpg',
+'Adventure',
+'2 Jam 42 Menit',
+'8.9',
+'Jake Sully kembali menghadapi ancaman baru di Planet Pandora.'
+)">
+<button>Detail Film</button>
+</a>
+
+</div>
+
+<!-- Film 2 -->
+
+<div class="movie-card">
+
+<img src="images/batman.jpg">
+
+<h3>The Batman</h3>
+
+<p>Action • 2025</p>
+
+<div class="rating">
+⭐⭐⭐⭐⭐
+</div>
+
+<a href="pages/detail-film.html"
+onclick="pilihFilm(
+'The Batman',
+'images/batman.jpg',
+'Action',
+'2 Jam 55 Menit',
+'9.2',
+'Batman kembali menghadapi musuh paling berbahaya di Gotham.'
+)">
+<button>Detail Film</button>
+</a>
+
+</div>
+
+<!-- Film 3 -->
+
+<div class="movie-card">
+
+<img src="images/spiderman.jpg">
+
+<h3>Spider-Man</h3>
+
+<p>Action • 2025</p>
+
+<div class="rating">
+⭐⭐⭐⭐☆
+</div>
+
+<a href="pages/detail-film.html"
+onclick="pilihFilm(
+'Spider-Man',
+'images/spiderman.jpg',
+'Action',
+'2 Jam 20 Menit',
+'8.8',
+'Peter Parker harus memilih antara kehidupan pribadi dan menyelamatkan kota.'
+)">
+<button>Detail Film</button>
+</a>
+
+</div>
+
+<!-- Film 4 -->
+
+<div class="movie-card">
+
+<img src="images/jumbo.jpg">
+
+<h3>Jumbo</h3>
+
+<p>Animation • 2025</p>
+
+<div class="rating">
+⭐⭐⭐⭐☆
+</div>
+
+<a href="pages/detail-film.html"
+onclick="pilihFilm(
+'Jumbo',
+'images/jumbo.jpg',
+'Animation',
+'1 Jam 45 Menit',
+'8.4',
+'Film animasi Indonesia yang penuh petualangan dan persahabatan.'
+)">
+<button>Detail Film</button>
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= COMING SOON ================= -->
+
+<section class="coming-soon" id="coming">
+
+<h2>Coming Soon</h2>
+
+<div class="movie-container">
+
+<div class="movie-card">
+
+<img src="images/engem1.jpg">
+
+<h3>Avengers</h3>
+
+<p>Coming Soon</p>
+
+</div>
+
+<div class="movie-card">
+
+<img src="images/kkn2.jpg">
+
+<h3>KKN Desa Penari 2</h3>
+
+<p>Coming Soon</p>
+
+</div>
+
+<div class="movie-card">
+
+<img src="images/alas.jpg">
+
+<h3>Alas Pati</h3>
+
+<p>Coming Soon</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= PROMO ================= -->
+
+<section class="promo" id="promo">
+
+<h2>Promo Hari Ini</h2>
+
+<div class="promo-box">
+
+<h3>🎉 Diskon 30%</h3>
+
+<p>
+Gunakan kode
+<b>BIOSWES30</b>
+untuk pembelian minimal 2 tiket.
+</p>
+
+</div>
+
+</section>
+
+<footer>
+
+<p>
+
+© 2026 BIOSWES
+
+</p>
+
+</footer>
+
+<script src="js/script.js"></script>
+
+</body>
+</html>

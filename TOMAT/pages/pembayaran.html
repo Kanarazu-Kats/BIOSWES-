@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Pembayaran | BIOSWES</title>
+
+<link rel="stylesheet" href="../css/style.css">
+
+<style>
+
+.container{
+
+max-width:800px;
+margin:40px auto;
+padding:30px;
+background:#1c1c1c;
+border-radius:15px;
+
+}
+
+.container h2{
+
+text-align:center;
+margin-bottom:30px;
+color:#FFD700;
+
+}
+
+.item{
+
+margin:18px 0;
+padding:15px;
+background:#2b2b2b;
+border-radius:8px;
+
+}
+
+label{
+
+display:block;
+margin-top:20px;
+margin-bottom:8px;
+font-weight:bold;
+
+}
+
+select{
+
+width:100%;
+padding:14px;
+border:none;
+border-radius:8px;
+font-size:16px;
+
+}
+
+.total{
+
+margin-top:25px;
+font-size:28px;
+font-weight:bold;
+color:#FFD700;
+text-align:center;
+
+}
+
+button{
+
+margin-top:30px;
+width:100%;
+padding:16px;
+font-size:18px;
+font-weight:bold;
+background:#FFD700;
+border:none;
+border-radius:8px;
+cursor:pointer;
+
+}
+
+button:hover{
+
+background:white;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">
+
+🎬 BIOSWES
+
+</div>
+
+<nav>
+
+<a href="../index.html">Home</a>
+
+</nav>
+
+</header>
+
+<div class="container">
+
+<h2>Pembayaran Tiket</h2>
+
+<div class="item">
+
+<b>Film :</b>
+
+<span id="film"></span>
+
+</div>
+
+<div class="item">
+
+<b>Jadwal :</b>
+
+<span id="jadwal"></span>
+
+</div>
+
+<div class="item">
+
+<b>Studio :</b>
+
+<span id="studio"></span>
+
+</div>
+
+<div class="item">
+
+<b>Kursi :</b>
+
+<span id="kursi"></span>
+
+</div>
+
+<label>Metode Pembayaran</label>
+
+<select id="metode">
+
+<option>QRIS</option>
+<option>DANA</option>
+<option>OVO</option>
+<option>GoPay</option>
+<option>Transfer BCA</option>
+<option>Transfer BNI</option>
+
+</select>
+
+<div class="total">
+
+Total :
+Rp <span id="total"></span>
+
+</div>
+
+<button onclick="bayar()">
+
+Bayar Sekarang
+
+</button>
+
+</div>
+
+<script>
+
+const film=JSON.parse(localStorage.getItem("film"));
+
+const jadwal=JSON.parse(localStorage.getItem("jadwal"));
+
+const kursi=JSON.parse(localStorage.getItem("kursi"));
+
+const total=localStorage.getItem("total");
+
+document.getElementById("film").innerHTML=film.judul;
+
+document.getElementById("jadwal").innerHTML=
+jadwal.tanggal+" | "+jadwal.jam;
+
+document.getElementById("studio").innerHTML=
+jadwal.studio;
+
+document.getElementById("kursi").innerHTML=
+kursi.join(", ");
+
+document.getElementById("total").innerHTML=
+Number(total).toLocaleString("id-ID");
+
+function bayar(){
+
+const metode=document.getElementById("metode").value;
+
+localStorage.setItem("metode",metode);
+
+alert("Pembayaran Berhasil!");
+
+window.location="tiket.html";
+
+}
+
+</script>
+
+</body>
+</html>
