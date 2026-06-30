@@ -585,3 +585,84 @@ color:#FFD700;
 text-decoration:none;
 
 }
+
+/* ===========================
+   LOKASI BIOSKOP
+=========================== */
+
+.bioskop{
+
+padding:60px 8%;
+
+}
+
+.bioskop h2{
+
+text-align:center;
+margin-bottom:35px;
+font-size:32px;
+color:#FFD700;
+
+}
+
+.bioskop-container{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+gap:25px;
+
+}
+
+.bioskop-card{
+
+background:#1d1d1d;
+
+padding:25px;
+
+border-radius:15px;
+
+cursor:pointer;
+
+transition:.35s;
+
+border:2px solid transparent;
+
+box-shadow:0 5px 20px rgba(0,0,0,.3);
+
+}
+
+.bioskop-card:hover{
+
+transform:translateY(-8px);
+
+border-color:#FFD700;
+
+box-shadow:0 10px 30px rgba(255,215,0,.3);
+
+}
+
+.bioskop-card.active{
+
+border:2px solid gold;
+
+background:#2a2a2a;
+
+}
+
+.bioskop-card h3{
+
+margin-bottom:12px;
+
+color:#FFD700;
+
+}
+
+.bioskop-card p{
+
+color:#ddd;
+
+line-height:1.7;
+
+}

@@ -150,6 +150,14 @@ color:white;
 
 <div class="item">
 
+<b>Bioskop</b>
+
+<span id="bioskop"></span>
+
+</div>
+
+<div class="item">
+
 <b>Kursi</b>
 
 <span id="kursi"></span>
@@ -212,6 +220,8 @@ const metode=localStorage.getItem("metode");
 
 const total=localStorage.getItem("total");
 
+const bioskop = localStorage.getItem("bioskop");
+
 film&&(document.getElementById("film").innerHTML=film.judul);
 
 jadwal&&(document.getElementById("tanggal").innerHTML=jadwal.tanggal);
@@ -219,7 +229,7 @@ jadwal&&(document.getElementById("tanggal").innerHTML=jadwal.tanggal);
 jadwal&&(document.getElementById("jam").innerHTML=jadwal.jam);
 
 jadwal&&(document.getElementById("studio").innerHTML=jadwal.studio);
-
+document.getElementById("bioskop").innerHTML = bioskop;
 kursi&&(document.getElementById("kursi").innerHTML=kursi.join(", "));
 
 document.getElementById("metode").innerHTML=metode;

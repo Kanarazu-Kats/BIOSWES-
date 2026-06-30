@@ -176,3 +176,42 @@ localStorage.removeItem("total");
 window.location="../index.html";
 
 }
+/* ===========================
+   PILIH BIOSKOP
+=========================== */
+
+const lokasi = localStorage.getItem("bioskop");
+
+if(lokasi){
+
+document.querySelectorAll(".bioskop-card").forEach(card=>{
+
+if(card.querySelector("h3").innerText===lokasi){
+
+card.classList.add("active");
+
+}else{
+
+card.classList.remove("active");
+
+}
+
+});
+
+}
+
+function pilihBioskop(card){
+
+document.querySelectorAll(".bioskop-card").forEach(item=>{
+
+item.classList.remove("active");
+
+});
+
+card.classList.add("active");
+
+const nama=card.querySelector("h3").innerText;
+
+localStorage.setItem("bioskop",nama);
+
+}
